@@ -1,0 +1,17 @@
+<br>
+<div class="Form">
+  <div class="Form-SignUp">
+    <form [formGroup]="LoginUser" (ngSubmit)="Login(LoginUser.value)" >
+      <label>Nombre:</label>
+      <br>
+      <input type="text" value="Nombre" formControlName="nombre" >
+      <br>
+      <label>Password:</label>
+      <br>
+      <input type="password" value="Password" formControlName="password">
+      <br>
+      <input type="submit" value="Login">
+      <a  [routerLink]="['user/createUser']"><input type="submit" value="Registrar" style="margin-left: 10px"></a>
+    </form>
+  </div>
+</div>

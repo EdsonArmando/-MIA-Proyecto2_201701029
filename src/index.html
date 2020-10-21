@@ -2,12 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>StoreOnline</title>
+  <title>Store Online</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link link rel="icon" type="image/x-icon .ico" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    function  myFunction2() {
+      var x = document.getElementById("myTopnav");
+      x.className = "app-option-menu";
+    }
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "app-option-menu" || x.className ===  "app-option-menu sticky") {
+        x.className += " responsive";
+      } else {
+        x.className = "app-option-menu";
+      }
+    }
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v7.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat"
+       attribution=setup_tool
+       page_id="110470480727584"
+       theme_color="#0084ff"
+       logged_in_greeting="Cual es el producto que desea comprar?"
+       logged_out_greeting="Cual es el producto que desea comprar?">
+  </div>
 </body>
+<footer>
+  <div class="wrapper">
+    <a href="https://www.facebook.com/kittyshoes2020" ><i class="fa fa-3x fa-google-plus"></i></a>
+    <a href="https://www.facebook.com/kittyshoes2020" ><i class="fa fa-3x fa-facebook-square"></i></a>
+    <a href="https://www.facebook.com/kittyshoes2020" ><i class="fa fa-3x fa-twitter-square"></i></a>
+  </div>
+</footer>
+<hr>
+<h1>FL</h1>
 </html>

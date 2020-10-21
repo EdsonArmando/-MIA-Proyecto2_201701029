@@ -1,0 +1,20 @@
+<h2>Carrito de Compras</h2>
+<div class="grid-container">
+  <div  class="items" *ngFor="let item of items">
+    <span> Nombre: {{ item.name}} </span>
+    <span> Precio: Q.{{ item.price}} </span>
+    <span> Codigo: {{ item.id}} </span>
+    <div class="img2">
+      <img src={{item.urlImage}}>
+    </div>
+    <button (click)="delete(item.id)">
+      Quitar
+    </button>
+  </div>
+</div>
+<h3>Total: Q. {{total}}</h3>
+<button (click)="comprar()">
+  Comprar
+</button>
+<jjva-ngx-whatsapp-button [ngx_whatsapp_phone]="50244663995" [ngx_whatsapp_text]="products"></jjva-ngx-whatsapp-button>
+

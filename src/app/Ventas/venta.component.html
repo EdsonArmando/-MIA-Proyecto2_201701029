@@ -1,0 +1,27 @@
+<br>
+<div class="Form" style="text-align: center">
+  <h2>Ingreso de Productos</h2>
+  <div class="Form-SignUp">
+    <form [formGroup]="insertVenta" (ngSubmit)="insertarVenta(insertVenta.value)">
+      <label>Key:</label>
+      <br>
+      <input type="text" formControlName="key">
+      <br>
+      <label>Estilo:</label>
+      <br>
+      <input type="text" formControlName="estilo">
+      <br>
+      <label>Precio:</label>
+      <br>
+      <input type="number" formControlName="cantidad">
+      <br>
+      <label>Fecha:</label>
+      <br>
+      <input type="date" id="datepicker" formControlName="fecha">
+      <br>
+      <input class="button" type="submit" value="Crear">
+    </form>
+  </div>
+</div>
+
+

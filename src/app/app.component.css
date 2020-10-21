@@ -1,0 +1,11 @@
+#NewToolBar{
+  width: 100%;
+  text-align: center;
+  height: 80px;
+  background-color: rgba(68, 159, 210, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+<h3>{{shoe.name }}</h3>
+<br>
+<div class="detail">
+  <div class="image">
+    <img src={{shoe.urlImage}}>
+  </div>
+  <div style="padding-left: 45px">
+    <h3>{{shoe.descripcion}}</h3>
+    <wbr>
+    <wbr>
+    <h2>Tallas</h2>
+    <h1>{{shoe.numeracion}}</h1>
+    <wbr>
+    <h2>Precio</h2>
+    <h1>Q.{{shoe.price}}</h1>
+    <wbr>
+    <strong>Para pedir pulsa el boton de whatsapp</strong>
+    <br>
+    <br>
+    <button id="comprar" (click)="addToCart(shoe)">Agregar al carrito</button>
+    <!-------
+    <a href="https://wa.me/50244663995?text=Me%20gustaría%20obtner%20el%20informacion%20del%20calzado" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+  ------>
+    <jjva-ngx-whatsapp-button [ngx_whatsapp_phone]="50244663995" [ngx_whatsapp_text]="massage"></jjva-ngx-whatsapp-button>
+
+  </div>
+</div>
+
+

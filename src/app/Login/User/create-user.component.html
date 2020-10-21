@@ -1,0 +1,42 @@
+<h3>Formulario de Registro</h3>
+<div class="Form">
+  <div class="Form-SignUp">
+    <form [formGroup]="LoginUser" (ngSubmit)="Create(LoginUser.value)" >
+      <label>Nombre:</label>
+      <br>
+      <input type="text" value="Nombre" formControlName="nombre" >
+      <br>
+      <label>Apellido:</label>
+      <br>
+      <input type="text" value="Apellido" formControlName="apellido" >
+      <br>
+      <label>FechaNacimiento:</label>
+      <br>
+      <input type="text" value="fechaNacimiento" formControlName="fechaNacimiento" >
+      <br>
+      <label>Correo:</label>
+      <br>
+      <input type="email" value="correo" formControlName="correo">
+      <br>
+      <label>Pais:</label>
+      <br>
+      <input type="text" value="pais" formControlName="pais" >
+      <br>
+      <label>URl_Image:</label>
+      <br>
+      <input type="file"
+             formControlName="foto"
+             #userPhoto
+             (change)="onFileSelected($event)"
+             name="image"
+             autocomplete="off"
+      />
+      <br>
+      <label>Password:</label>
+      <br>
+      <input type="password" value="Password" formControlName="contrasenia">
+      <br>
+      <input type="submit" value="Create">
+    </form>
+  </div>
+</div>

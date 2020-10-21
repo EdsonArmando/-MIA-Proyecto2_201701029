@@ -1,0 +1,25 @@
+<div  (mouseover)="changeText=true" (mouseout)="changeText=false" class="card">
+  <div class="box large">
+    <a  [routerLink]="['/products',shoe.id,shoe.categoria]">
+      <h2>{{shoe.name}}</h2>
+    </a>
+    <a  [routerLink]="['/products',shoe.id,shoe.categoria]">
+      <div class="img2">
+        <img alt="Sorry! Image not available at this time"  *ngIf="!changeText" src={{shoe.urlImage}}>
+        <img  alt="Sorry! Image not available at this time"  *ngIf="changeText" src={{shoe.urlImage}}>
+      </div>
+    </a>
+  </div>
+  <div>
+    <h2 *ngIf="shoe.descripcion">
+      Descripcion: {{shoe.descripcion}}
+    </h2>
+  </div>
+  <div>
+    <h3>{{shoe.categoria}}</h3>
+    <h2>Precio</h2>
+    <h1>Q{{shoe.price}}</h1>
+    <h2>Tallas: {{shoe.numeracion}}</h2>
+  </div>
+</div>
+

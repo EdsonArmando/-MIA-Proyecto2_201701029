@@ -1,0 +1,8 @@
+<div class="tamanio">
+  <h2>Productos</h2>
+  <div class="grid-container">
+    <div *ngFor="let shoe of shoes ; index as productId" >
+      <app-card-product [shoe]="shoe"></app-card-product>
+    </div>
+  </div>
+</div>
