@@ -29,6 +29,7 @@ export class CreateUserComponent implements OnInit{
       fechaNacimiento: '',
       pais: '',
       foto: '',
+      estado: '0'
     });
   }
   ngOnInit(): void {
