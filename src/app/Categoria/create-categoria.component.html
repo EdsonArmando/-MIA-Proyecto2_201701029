@@ -1,0 +1,14 @@
+<br>
+<div class="Form" style="text-align: center">
+  <h2>Ingreso de Categoria</h2>
+  <div class="Form-SignUp">
+    <form [formGroup]="formCat" (ngSubmit)="InsertCategoria(formCat.value)">
+      <label>Nombre:</label>
+      <br>
+      <input type="text" formControlName="nombre">
+      <br>
+      <input class="button" type="submit" value="Crear">
+    </form>
+  </div>
+</div>
+

@@ -26,6 +26,8 @@ import { CreateShoeComponent } from './Create-Product/createShoe.component';
 import { VentaComponent } from './Ventas/venta.component';
 import { LoginComponent } from './Login/login.component';
 import { CreateUserComponent } from './Login/User/create-user.component';
+import {PerfilComponent} from './Login/Perfil/perfil.component';
+import {CreateCategoriaComponent} from './Categoria/create-categoria.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { CreateUserComponent } from './Login/User/create-user.component';
     CreateShoeComponent,
     VentaComponent,
     LoginComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    PerfilComponent,
+    CreateCategoriaComponent
   ],
   imports: [
     BrowserModule,
@@ -52,15 +56,18 @@ import { CreateUserComponent } from './Login/User/create-user.component';
     AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
+      { path: 'index', component: OptionMenuComponent },
       { path: 'listShoes/:category/One', component: ShoesListComponent },
       { path: 'user/createUser', component: CreateUserComponent },
       { path: 'listShoes/:category/Two', component: ShoesListComponent },
       { path: 'listShoes/:category/tree', component: ShoesListComponent },
       { path: 'listShoes/:category/for', component: ShoesListComponent },
+      { path: 'listShoes/List', component: ShoesListComponent },
       { path: 'cart', component: ProductCartComponent },
       { path: 'venta', component: VentaComponent },
-      { path: 'register', component: SignupComponent },
-      { path: 'create_shoe/:idCreate', component: CreateShoeComponent },
+      { path: 'Perfil/:id', component: SignupComponent },
+      { path: 'create_shoe', component: CreateShoeComponent },
+      { path: 'create_categoria', component: CreateCategoriaComponent },
       { path: 'products/:productId/:category', component: DetailProductComponent },
     ])
   ],

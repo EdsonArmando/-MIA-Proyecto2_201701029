@@ -1,4 +1,5 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
+import {ApiRest} from '../API-REST/API.service';
 
 @Component({
   selector: 'app-option-menu',
@@ -6,9 +7,19 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
   styleUrls: ['./OptionMenu.component.css']
 })
 export class OptionMenuComponent implements OnInit{
-  sticky: boolean = false;
+  sticky:boolean = false;
+  @Input() idUser: number;
+  @Input() login: boolean;
+  constructor(private apiRest: ApiRest) {
+    this.idUser = apiRest.returnIdUser();
+  }
   @ViewChild('stickyMenu2') menuElement: ElementRef;
   elementPosition: any;
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnChanges(value){
+    alert(value);
+  }
+  // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit(){
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
@@ -21,8 +32,12 @@ export class OptionMenuComponent implements OnInit{
       this.sticky = false;
     }
   }
-  constructor() {
+  public hola(){
+    this.login = true;
+    this.idUser = this.apiRest.returnIdUser();
+    this.ngOnInit();
   }
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.login = this.apiRest.login;
   }
 }

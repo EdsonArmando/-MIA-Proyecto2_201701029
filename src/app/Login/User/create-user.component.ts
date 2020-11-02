@@ -15,6 +15,7 @@ export class CreateUserComponent implements OnInit{
   downloadURL: Observable<string>;
   userData;
   url2;
+  paises;
   constructor(
     private apiRest: ApiRest,
     private storage: AngularFireStorage,
@@ -28,15 +29,18 @@ export class CreateUserComponent implements OnInit{
       contrasenia: '',
       fechaNacimiento: '',
       pais: '',
+      creditos: 100,
       foto: '',
       estado: '0'
     });
   }
   ngOnInit(): void {
+    this.apiRest.getPaises().subscribe((data: {}) => {
+      this.paises = data;
+    });
   }
   Create(data){
     data.foto = this.url2;
-    console.log(data);
     this.apiRest.addCustomer(data).subscribe((result) => {
       alert('Usuario Creado Exitosamente');
     }, (err) => {

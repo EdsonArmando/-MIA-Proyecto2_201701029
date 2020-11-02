@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {ApiRest} from '../API-REST/API.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +9,29 @@ import { HttpClient } from '@angular/common/http';
 export class CartService{
   items = [];
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private apiRest: ApiRest,
   ) {
     if(localStorage.getItem('pila') === null){
       localStorage.setItem('pila', JSON.stringify(this.items));
     }
   }
-  addToCart(product){
+  addToCart(product, idUsuario){
+    product.idUserCarrito = idUsuario;
     this.items = JSON.parse(localStorage.getItem('pila'));
     this.items.push(product);
     localStorage.setItem('pila', JSON.stringify(this.items));
   }
   getItems(){
-    return JSON.parse(localStorage.getItem('pila'));
+    let pila = [];
+    let pilatemp = JSON.parse(localStorage.getItem('pila'));
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0 ; i < pilatemp.length; i++){
+      if (pilatemp[i].idUserCarrito === this.apiRest.returnIdUser()){
+        pila.push(pilatemp[i]);
+      }
+    }
+    return pila;
   }
   clearCart(){
     this.items = [];

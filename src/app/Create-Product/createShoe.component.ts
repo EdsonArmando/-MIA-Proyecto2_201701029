@@ -15,41 +15,34 @@ export class CreateShoeComponent implements OnInit{
   insertShoe;
   downloadURL: Observable<string>;
   url2;
-  id_toInsert;
+  categorias;
   constructor(private formBuilder: FormBuilder,
               private storage: AngularFireStorage,
               private apiRest: ApiRest,
               private route: ActivatedRoute) {
     this.insertShoe = this.formBuilder.group({
-      id: '',
-      key: 'Edson?2020',
-      name: '',
-      urlImage: '',
-      price: '',
-      disponibilidad: '',
-      cantidad: '',
-      descripcion: '',
-      categoria: '',
-      numeracion: ''
+      nombre: '',
+      foto: '',
+      precio: '',
+      detalleProducto: '',
+      idCategoria: '',
+      idUsuario: this.apiRest.returnIdUser()
     });
   }
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.id_toInsert = params.get('idCreate');
+    this.apiRest.getCategorias().subscribe((data: {}) => {
+      this.categorias = data;
     });
   }
   InsertShoe(dataShoe){
-    if(this.id_toInsert=='Edson2020'){
-      dataShoe.urlImage = this.url2;
-      this.apiRest.addShoe(dataShoe).subscribe((result) => {
+      dataShoe.idCategoria = Number(dataShoe.idCategoria);
+      dataShoe.foto = this.url2;
+      this.apiRest.addProducto(dataShoe).subscribe((result) => {
         console.log('Succes');
         alert('Producto Agregado Exitosamente');
       }, (err) => {
         console.log(err);
       });
-    }else{
-      alert('Not Access');
-    }
   }
   onFileSelected(event){
     const id = Math.random().toString(36).substring(2);

@@ -1,14 +1,14 @@
 <div class="app-option-menu" id="myTopnav"
   #stickyMenu2
      [class.sticky] = "sticky" >
-    <a onclick="myFunction2()"  [routerLink]="['/']">Honey Blessings</a>
-    <a onclick="myFunction2()"  [routerLink]="['/']">Inicio</a>
-    <a onclick="myFunction2()"  [routerLink]="['listShoes/Niño/One']">Niño</a>
-    <a onclick="myFunction2()"  [routerLink]="['listShoes/Niña/Two']">Niña</a>
-    <a onclick="myFunction2()"  [routerLink]="['listShoes/Dama/tree']">Dama</a>
-    <a onclick="myFunction2()"  [routerLink]="['listShoes/Caballero/for']">Caballero</a>
-    <a onclick="myFunction2()" routerLink="/cart">Carrito</a>
-    <a id="singup" routerLink="/register">SignUp</a>
+    <a onclick="myFunction2()"  [routerLink]="['/']">Store Online</a>
+    <a onclick="myFunction2()"  [routerLink]="['/']" *ngIf="login">Inicio</a>
+    <a onclick="myFunction2()"  [routerLink]="['listShoes/Niño/One']"*ngIf="login">Niño</a>
+    <a onclick="myFunction2()"  [routerLink]="['listShoes/Niña/Two']"*ngIf="login">Niña</a>
+    <a onclick="myFunction2()"  [routerLink]="['create_categoria']"*ngIf="login">Categoria</a>
+    <a onclick="myFunction2()"  [routerLink]="['create_shoe']" *ngIf="login">IngresarProducto</a>
+    <a onclick="myFunction2()" routerLink="/cart" *ngIf="login">Carrito</a>
+    <a id="singup" [routerLink]="['Perfil',idUser]" (click)="hola()">Perfil</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
     </a>

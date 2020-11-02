@@ -13,6 +13,7 @@ declare var $: any;
 export class DetailProductComponent implements OnInit{
   productID;
   shoe;
+  idUser;
   category;
   massage = "Quiero realizar una compra";
   constructor(
@@ -22,6 +23,7 @@ export class DetailProductComponent implements OnInit{
   ) {
   }
   ngOnInit(): void {
+    this.idUser = this.apiRest.returnIdUser();
     $(document).ready(function(){
       let boton =  $('.ngx-whatsapp-button-float');
       boton.css('bottom','90px')
@@ -39,10 +41,10 @@ export class DetailProductComponent implements OnInit{
     });
   }
     addToCart(product){
-      this.cartService.addToCart(product);
+      this.cartService.addToCart(product, this.idUser);
     }
    getShoe(id){
-    this.shoe = this.apiRest.getOneShoe(id).subscribe((data: {}) => {
+    this.shoe = this.apiRest.getOneProducto(id).subscribe((data: {}) => {
       this.shoe = data[0];
     });
   }

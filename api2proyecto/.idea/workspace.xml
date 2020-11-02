@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c355616-07d1-4dfc-9206-0dffb017e93d" name="Default Changelist" comment="" />
+    <list default="true" id="1c355616-07d1-4dfc-9206-0dffb017e93d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/API-REST/API.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/API-REST/API.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/CardViewProduct/card-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/CardViewProduct/card-product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/Login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/SigUp/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/SigUp/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/SigUp/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/SigUp/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/product-cart/productCart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/product-cart/productCart.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/app/shoes-list/shoes-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/shoes-list/shoes-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +40,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ilJOJDvc0J0OTWYXUtAr6XQPlS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,7 +54,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.19.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="10.17.39" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Proyectos/storeOnline" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -50,6 +80,13 @@
       <workItem from="1603159723239" duration="6408000" />
       <workItem from="1603244121589" duration="3036000" />
       <workItem from="1603328175945" duration="9053000" />
+      <workItem from="1603338345503" duration="6000" />
+      <workItem from="1603816394426" duration="4950000" />
+      <workItem from="1603940149683" duration="4605000" />
+      <workItem from="1604019880058" duration="3233000" />
+      <workItem from="1604103471346" duration="10513000" />
+      <workItem from="1604205260835" duration="1936000" />
+      <workItem from="1604280686434" duration="7732000" />
     </task>
     <servers />
   </component>

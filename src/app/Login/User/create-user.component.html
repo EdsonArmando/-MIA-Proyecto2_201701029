@@ -20,7 +20,9 @@
       <br>
       <label>Pais:</label>
       <br>
-      <input type="text" value="pais" formControlName="pais" >
+      <select formControlName="pais" name="cars" id="cars">
+          <option *ngFor="let pais of paises ; index as id" [value]="pais.idPais">{{pais.nombre}}</option>
+      </select>
       <br>
       <label>URl_Image:</label>
       <br>

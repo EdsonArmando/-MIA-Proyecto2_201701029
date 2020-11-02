@@ -1,20 +1,23 @@
+<h3>Perfil de Usuario</h3>
 <br>
-<div class="Form">
-  <div class="Form-SignUp">
-    <form [formGroup]="insertCustomer" >
-      <label>Nombre:</label>
-      <br>
-      <input type="text" id="nombre" value="Nombre">
-      <br>
-      <label>Correo:</label>
-      <br>
-      <input type="email" id="email" value="correo">
-      <br>
-      <label>Password:</label>
-      <br>
-      <input type="password" id="password" value="Password">
-      <br>
-      <input type="submit" value="Registrar">
-    </form>
+<div class="detail">
+  <div class="image">
+    <img src={{user.foto}}>
+  </div>
+  <div style="padding-left: 45px">
+    <h2>Nombre</h2>
+    <h3>{{user.nombre}}</h3>
+    <h2>Apellido</h2>
+    <h3>{{user.apellido}}</h3>
+    <wbr>
+    <h2>Creditos</h2>
+    <h1>{{user.creditos}}</h1>
+    <wbr>
+    <h2>FechaNacimiento</h2>
+    <h1>{{user.fechaNacimiento}}</h1>
+    <wbr>
+    <br>
   </div>
 </div>
+
+

@@ -3,52 +3,33 @@
   <h2>Ingreso de Productos</h2>
   <div class="Form-SignUp">
     <form [formGroup]="insertShoe" (ngSubmit)="InsertShoe(insertShoe.value)">
-      <label>Codigo:</label>
-      <br>
-      <input type="text" formControlName="id">
-      <br>
       <label>Nombre:</label>
       <br>
-      <input type="text" formControlName="name">
+      <input type="text" formControlName="nombre">
       <br>
       <label>URl_Image:</label>
       <br>
       <input type="file"
-             formControlName="urlImage"
+             formControlName="foto"
              #userPhoto
              (change)="onFileSelected($event)"
              name="image"
              autocomplete="off"
       />
       <br>
-      <label>Price:</label>
+      <label>Precio:</label>
       <br>
-      <input type="number" formControlName="price" >
-      <br>
-      <label>Disponibilidad:</label>
-      <br>
-      <input type="text" formControlName="disponibilidad" >
-      <br>
-      <label>Cantidad:</label>
-      <br>
-      <input type="text" formControlName="cantidad" >
+      <input type="number" formControlName="precio" >
       <br>
       <label>Descripcion:</label>
       <br>
-      <input type="text" formControlName="descripcion">
+      <input type="text" formControlName="detalleProducto">
       <br>
       <label>Categoria:</label>
       <br>
-      <select formControlName="categoria">
-        <option value="Niño" selected>Niño</option>
-        <option value="Niña">Niña</option>
-        <option value="Dama">Dama</option>
-        <option value="Caballero">Caballero</option>
+      <select formControlName="idCategoria" name="cars" id="cars">
+        <option *ngFor="let cat of categorias ; index as id" [value]="cat.codido">{{cat.nombre}}</option>
       </select>
-      <br>
-      <label>Numeracion:</label>
-      <br>
-      <input type="text" formControlName="numeracion">
       <br>
       <input class="button" type="submit" value="Crear">
     </form>

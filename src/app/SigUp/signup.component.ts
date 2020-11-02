@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
+import {ApiRest} from '../API-REST/API.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,16 +8,16 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  insertCustomer;
-  constructor(
-    private formBuilder: FormBuilder
-  ) {
-    this.insertCustomer = this.formBuilder.group({
-      nombre: '',
-      email: '',
-      password: ''
-    });
+  user;
+  constructor(private apiRest: ApiRest) {
   }
   ngOnInit(): void {
+    this.getData();
+  }
+  getData(){
+    this.apiRest.getDataUsuario(this.apiRest.returnIdUser()).subscribe((data2: {}) => {
+      this.user = data2[0];
+      console.log('data', data2);
+    });
   }
 }

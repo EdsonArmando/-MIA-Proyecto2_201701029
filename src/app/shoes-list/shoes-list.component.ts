@@ -36,11 +36,11 @@ export class ShoesListComponent implements OnInit{
         this.shoes = data;
       });
     }else if (this.categoria === 'Dama'){
-      this.apiRest.getShoesDama().subscribe((data: {}) => {
+      this.apiRest.getShoes().subscribe((data: {}) => {
         this.shoes = data;
       });
     }else{
-      this.apiRest.getShoes().subscribe((data: {}) => {
+      this.apiRest.getProducts().subscribe((data: {}) => {
         this.shoes = data;
       });
     }
