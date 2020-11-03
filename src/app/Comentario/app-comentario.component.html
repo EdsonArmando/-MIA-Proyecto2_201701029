@@ -1,0 +1,31 @@
+<h2>Comentarios</h2>
+<br>
+<div class="Form" style="text-align: center">
+  <h2>Ingreso de Comentario</h2>
+  <div class="Form-SignUp" style="width: 600px">
+    <form [formGroup]="formCat" (ngSubmit)="InsertComentario(formCat.value)">
+      <label>Nombre:</label>
+      <br>
+      <input type="text" formControlName="descripcion">
+      <br>
+      <input class="button" type="submit" value="Crear">
+    </form>
+  </div>
+</div>
+<div>
+  <input style="margin-top: 10px" (click)="Denunciar()" class="button" type="submit" value="Denunciar">
+</div>
+<div style="margin-top: 15px">
+  <table>
+    <tr>
+      <th>Usuario</th>
+      <th>Descripcion</th>
+      <th>Fecha</th>
+    </tr>
+      <tr *ngFor="let com of comentarios">
+        <td>{{com.nombre}}</td>
+        <td>{{com.descripcion}}</td>
+        <td>{{com.fecha}}</td>
+      </tr>
+  </table>
+</div>

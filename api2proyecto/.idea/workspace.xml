@@ -2,30 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c355616-07d1-4dfc-9206-0dffb017e93d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/app/Categoria/create-categoria.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/app/Login/Perfil/perfil.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Comentario/app-comentario.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Comentario/app-comentario.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/app/Comentario/app-comentario.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/API-REST/API.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/API-REST/API.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/CardViewProduct/card-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/CardViewProduct/card-product.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Create-Product/createShoe.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/DetailProduct/DetailProduct.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/User/create-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/Login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/Login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/OptionMenu/OptionMenu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/SigUp/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/SigUp/signup.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/SigUp/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/SigUp/signup.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/product-cart/productCart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/product-cart/productCart.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app/shoes-list/shoes-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../src/app/shoes-list/shoes-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +72,8 @@
       <workItem from="1604019880058" duration="3233000" />
       <workItem from="1604103471346" duration="10513000" />
       <workItem from="1604205260835" duration="1936000" />
-      <workItem from="1604280686434" duration="7732000" />
+      <workItem from="1604280686434" duration="7941000" />
+      <workItem from="1604364716681" duration="7598000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@
   #stickyMenu2
      [class.sticky] = "sticky" >
     <a onclick="myFunction2()"  [routerLink]="['/']">Store Online</a>
-    <a onclick="myFunction2()"  [routerLink]="['/']" *ngIf="login">Inicio</a>
+    <a onclick="myFunction2()"  [routerLink]="['/listShoes/List']" *ngIf="login">Inicio</a>
     <a onclick="myFunction2()"  [routerLink]="['listShoes/Niño/One']"*ngIf="login">Niño</a>
     <a onclick="myFunction2()"  [routerLink]="['listShoes/Niña/Two']"*ngIf="login">Niña</a>
     <a onclick="myFunction2()"  [routerLink]="['create_categoria']"*ngIf="login">Categoria</a>

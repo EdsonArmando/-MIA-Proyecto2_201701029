@@ -28,6 +28,7 @@ import { LoginComponent } from './Login/login.component';
 import { CreateUserComponent } from './Login/User/create-user.component';
 import {PerfilComponent} from './Login/Perfil/perfil.component';
 import {CreateCategoriaComponent} from './Categoria/create-categoria.component';
+import {AppComentarioComponent} from './Comentario/app-comentario.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {CreateCategoriaComponent} from './Categoria/create-categoria.component';
     LoginComponent,
     CreateUserComponent,
     PerfilComponent,
-    CreateCategoriaComponent
+    CreateCategoriaComponent,
+    AppComentarioComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ import {CreateCategoriaComponent} from './Categoria/create-categoria.component';
       { path: 'listShoes/List', component: ShoesListComponent },
       { path: 'cart', component: ProductCartComponent },
       { path: 'venta', component: VentaComponent },
+      { path: 'comentario/:productId', component: AppComentarioComponent },
       { path: 'Perfil/:id', component: SignupComponent },
       { path: 'create_shoe', component: CreateShoeComponent },
       { path: 'create_categoria', component: CreateCategoriaComponent },

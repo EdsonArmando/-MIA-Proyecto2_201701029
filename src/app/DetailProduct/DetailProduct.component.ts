@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ApiRest} from '../API-REST/API.service';
 import { CartService } from '../product-cart/productCart.service';
 
@@ -19,7 +19,8 @@ export class DetailProductComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private apiRest: ApiRest,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
   ) {
   }
   ngOnInit(): void {
@@ -40,6 +41,9 @@ export class DetailProductComponent implements OnInit{
       this.massage = this.massage + " del calzado de " + this.category + " con codigo " + this.productID;
     });
   }
+    comentarioProducto(data){
+      this.router.navigate(['./comentario'+'/'+this.productID]);
+    }
     addToCart(product){
       this.cartService.addToCart(product, this.idUser);
     }

@@ -39,6 +39,27 @@ router.get('/getCategorias', async (req, res) => {
     var jsonString = JSON.stringify(Users);
     res.json(Users);
 })
+//GetComentario
+router.put('/getComentarios', async (req, res) => {
+  const { id } = req.body;
+  sql = "select comentario.idComentario,comentario.Descripcion,comentario.fecha,usuario.nombre, producto.nombre from comentario,usuario,producto where comentario.idProducto = :id and comentario.idUsuario = usuario.idUsuario and comentario.idProducto = producto.idProducto";
+
+  let result = await BD.Open(sql, [id], true);
+  var Users = [];
+
+  result.rows.map(data => {
+    let userSchema = {
+      "id": data[0],
+      "descripcion": data[1],
+      "fecha": data[2],
+      "nombre": data[3],
+      "producto": data[4]
+    }
+    Users.push(userSchema);
+  })
+  var jsonString = JSON.stringify(Users);
+  res.json(Users);
+})
 //GetUsuario
 router.get('/getProducto', async (req, res) => {
   sql = "(select producto.idproducto,producto.nombre,producto.detalleproducto,producto.foto,producto.idcategoria,producto.precio, categoria.nombre as NombreCategoria, usuario.nombre from categoria, producto,usuario" +
@@ -137,6 +158,26 @@ router.post('/insertCategoria',async (req,res)=>{
   await BD.Open(sql, [nombre], true);
   res.status(200).json({
     "Nombre": nombre
+  })
+})
+//create Comentario
+router.post('/insertComentario',async (req,res)=>{
+  const { idUsuario,idProducto,descripcion,fecha } = req.body;
+  sql = "insert into Comentario(idUsuario,idProducto,descripcion,fecha)" +
+    "values (:idUsuario,:idProducto,:descripcion,:fecha)";
+  await BD.Open(sql, [idUsuario,idProducto,descripcion,fecha], true);
+  res.status(200).json({
+    "descripcion": descripcion
+  })
+})
+//create Denuncia
+router.post('/insertDenuncia',async (req,res)=>{
+  const { idUsuario,idProducto,descripcion,fecha,estado } = req.body;
+  sql = "insert into Denuncia(idUsuario,idProducto,descripcion,fecha,estado)" +
+    "values (:idUsuario,:idProducto,:descripcion,:fecha,:estado)";
+  await BD.Open(sql, [idUsuario,idProducto,descripcion,fecha,estado], true);
+  res.status(200).json({
+    "descripcion": descripcion
   })
 })
 //Validar Cuenta

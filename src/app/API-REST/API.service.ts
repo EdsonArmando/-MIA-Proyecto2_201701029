@@ -79,6 +79,9 @@ export class ApiRest{
   public getProducts(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getProducto');
   }
+  public getComentarios(id): Observable<any>{
+    return this.httpClient.put(endpointLocal + 'getComentarios', '{ "id": "' + id + '" }' , httpOptions);
+  }
   public getIdUsuario(user): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'getId', '{ "username": "' + user + '" }' , httpOptions);
   }
@@ -108,6 +111,18 @@ export class ApiRest{
     return this.httpClient.post<any>(endpointLocal + 'insertCategoria', JSON.stringify(data), httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap(( data ) => console.log(`added product w/ id=${data.nombre}`)),
+    );
+  }
+  public addComentario(data): Observable<any> {
+    return this.httpClient.post<any>(endpointLocal + 'insertComentario', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.descripcion}`)),
+    );
+  }
+  public addDenuncia(data): Observable<any> {
+    return this.httpClient.post<any>(endpointLocal + 'insertDenuncia', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.descripcion}`)),
     );
   }
 }
