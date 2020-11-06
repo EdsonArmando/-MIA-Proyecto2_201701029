@@ -2,8 +2,9 @@
 <div class="grid-container">
   <div  class="items" *ngFor="let item of items">
     <span> Nombre: {{ item.name}} </span>
-    <span> Precio: Q.{{ item.price}} </span>
+    <span> Total: Q.{{ item.price * item.cantidad}} </span>
     <span> Codigo: {{ item.id}} </span>
+    <span> Cantidad: {{ item.cantidad}} </span>
     <div class="img2">
       <img src={{item.urlImage}}>
     </div>
@@ -13,6 +14,7 @@
   </div>
 </div>
 <h3>Total: Q. {{total}}</h3>
+<h3>Fecha: {{today | date:'short'}}</h3>
 <button (click)="comprar()">
   Comprar
 </button>

@@ -15,6 +15,9 @@ export class DetailProductComponent implements OnInit{
   shoe;
   idUser;
   category;
+  ejecutad: boolean = false;
+  @Input() cantidadLike = 1;
+  @Input() cantidadDisLike = 1;
   massage = "Quiero realizar una compra";
   constructor(
     private route: ActivatedRoute,
@@ -41,10 +44,24 @@ export class DetailProductComponent implements OnInit{
       this.massage = this.massage + " del calzado de " + this.category + " con codigo " + this.productID;
     });
   }
+    like(valor){
+      if (this.ejecutad === false){
+        this.cantidadLike += valor;
+        this.ejecutad = true;
+      }
+    }
+    dislike(valor){
+      if (this.ejecutad === true){
+        this.cantidadDisLike += 1;
+        this.cantidadLike = this.cantidadLike - 1;
+        this.ejecutad = false;
+      }
+    }
     comentarioProducto(data){
       this.router.navigate(['./comentario'+'/'+this.productID]);
     }
-    addToCart(product){
+    addToCart(product,cantidad){
+      product.cantidad = cantidad;
       this.cartService.addToCart(product, this.idUser);
     }
    getShoe(id){

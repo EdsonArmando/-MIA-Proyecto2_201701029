@@ -28,4 +28,26 @@ function mail(email,nombre){
         }
     });
 }
+function mailCompra(email,nombre,total,productos){
+  var mailOptions = {
+    from: 'edsonguix@gmail.com',
+    to: email,
+    subject: 'Producto Comprados',
+    html: `
+    <div style=" border: 5px outset red; background-color: lightblue; text-align: center;">
+        <strong>Productos Comprados</strong><br/>
+         <strong>Total: Q.</strong> ${total}
+         ${productos}
+    </div>
+     `
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
 module.exports = {mail:mail};
+module.exports = {mailCompra:mailCompra};

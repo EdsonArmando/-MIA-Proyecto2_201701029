@@ -143,6 +143,18 @@ img:hover{
   cursor: auto;
 }
 /*
+Like
+ */
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+/*
 Size Image
  */
 img{

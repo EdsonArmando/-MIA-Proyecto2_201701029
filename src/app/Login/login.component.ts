@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit{
           });
       }else{
         this.idUsuario = this.apiRest.getIdUsuario(this.tipoUsuario).subscribe((data2: {}) => {
+          this.apiRest.dataUser = data2[0];
           this.apiRest.setId(data2[0].idUsuario);
           this.apiRest.setLogin();
         });

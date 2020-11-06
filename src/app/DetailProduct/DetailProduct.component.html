@@ -17,7 +17,19 @@
     <strong>Para pedir pulsa el boton de whatsapp</strong>
     <br>
     <br>
-    <button id="comprar" (click)="addToCart(shoe)">Agregar al carrito</button>
+    <div id="container" style="display: flex">
+      <div style="width: 46.45px">
+        <i (click)="like(1)" class="fa fa-thumbs-up"></i>
+        <h1 id="like">{{cantidadLike}}</h1>
+      </div>
+      <div style="width: 46.45px; padding-left: 15px">
+        <i (click)="dislike(1)" class="fa fa-thumbs-down"></i>
+        <h1 id="dislike">{{cantidadDisLike}}</h1>
+      </div>
+    </div>
+    <h2>Cantidad</h2>
+    <input #numero type="number" id="quantity" [value]="1" name="quantity" min="1" max="5"><br><br>
+    <button id="comprar" (click)="addToCart(shoe,numero.value)">Agregar al carrito</button>
     <button style="margin-left: 15px" id="comprar" (click)="comentarioProducto(shoe)">Comentario</button>
     <!-------
     <a href="https://wa.me/50244663995?text=Me%20gustaría%20obtner%20el%20informacion%20del%20calzado" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
@@ -26,5 +38,3 @@
 
   </div>
 </div>
-
-

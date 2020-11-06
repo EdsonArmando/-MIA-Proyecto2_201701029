@@ -21,6 +21,7 @@ export class ApiRest{
    login = false;
    idUser = 0;
    username;
+   dataUser;
   constructor(private httpClient: HttpClient) { }
   public getOneShoe(id): Observable<any>{
     console.log(id);
@@ -73,6 +74,9 @@ export class ApiRest{
   public getPaises(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getPaises');
   }
+  public getLastId(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'getLastIdCompra');
+  }
   public getCategorias(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getCategorias');
   }
@@ -123,6 +127,23 @@ export class ApiRest{
     return this.httpClient.post<any>(endpointLocal + 'insertDenuncia', JSON.stringify(data), httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap(( data ) => console.log(`added product w/ id=${data.descripcion}`)),
+    );
+  }
+  public add_Compra(data, products): Observable<any> {
+    let jsonproducts: String = '';
+    for (const element of products){
+      jsonproducts += '<strong>CodigoProducto:</strong>' + element.id + '' + '<strong>Producto:</strong>' + element.name + '';
+    }
+    data.correo = jsonproducts;
+    return this.httpClient.post<any>(endpointLocal + 'insertCompra', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.idUsuario}`)),
+    );
+  }
+  public addDetalleCompra(data): Observable<any> {
+    return this.httpClient.post<any>(endpointLocal + 'insertDetalleCompra', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.idCompra}`)),
     );
   }
 }

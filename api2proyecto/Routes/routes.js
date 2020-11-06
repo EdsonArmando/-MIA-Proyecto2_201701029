@@ -1,7 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const { mail } = require('../Email/email');
+const { mailCompra } = require('../Email/email');
 const BD = require('../Config/configdb');
+var dataUser;
 router.get('/', async (req, res) => {
     res.json('Hola Mundo');
 })
@@ -38,6 +40,22 @@ router.get('/getCategorias', async (req, res) => {
     })
     var jsonString = JSON.stringify(Users);
     res.json(Users);
+})
+//getLastId
+router.get('/getLastIdCompra', async (req, res) => {
+  sql = " select max(compra.idCompra) from compra";
+
+  let result = await BD.Open(sql, [], false);
+  var Users = [];
+
+  result.rows.map(user => {
+    let userSchema = {
+      "codigo": user[0]
+    }
+    Users.push(userSchema);
+  })
+  var jsonString = JSON.stringify(Users);
+  res.json(Users);
 })
 //GetComentario
 router.put('/getComentarios', async (req, res) => {
@@ -117,8 +135,10 @@ router.put('/Login',async (req,res)=>{
     result.rows.map(user => {
         let userSchema = {
             "NOMBRE": user[2],
+            "CORREO": user[4],
             "CONTRASENIA": user[5],
         }
+        dataUser = userSchema;
         Users.push(userSchema);
     })
     var jsonString = JSON.stringify(Users);
@@ -178,6 +198,27 @@ router.post('/insertDenuncia',async (req,res)=>{
   await BD.Open(sql, [idUsuario,idProducto,descripcion,fecha,estado], true);
   res.status(200).json({
     "descripcion": descripcion
+  })
+})
+//create Compra
+router.post('/insertCompra',async (req,res)=>{
+  console.log(req.body);
+  const { idUsuario,fecha, total,correo } = req.body;
+  sql = "insert into Compra(idUsuario,fecha) values (:idUsuario,:fecha)";
+  let result = await BD.Open(sql, [idUsuario,fecha], true);
+  res.status(200).json({
+    "idUsuario": idUsuario
+  })
+  mailCompra(dataUser.CORREO,dataUser.NOMBRE,total,correo);
+})
+//create Detalle Compra
+router.post('/insertDetalleCompra',async (req,res)=>{
+  const { idCompra,idProducto,cantidad,fecha } = req.body;
+  sql = "insert into detallecompra(idCompra,idProducto,cantidad,fecha)" +
+    "values (:idCompra,:idProducto,:cantidad,:fecha )";
+  await BD.Open(sql, [idCompra,idProducto,cantidad,fecha ], true);
+  res.status(200).json({
+    "idCompra": idCompra
   })
 })
 //Validar Cuenta
