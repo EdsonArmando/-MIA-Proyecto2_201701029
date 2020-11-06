@@ -15,6 +15,7 @@ export class DetailProductComponent implements OnInit{
   shoe;
   idUser;
   category;
+  first = false;
   ejecutad: boolean = false;
   @Input() cantidadLike = 1;
   @Input() cantidadDisLike = 1;
@@ -43,19 +44,44 @@ export class DetailProductComponent implements OnInit{
       this.getShoe(this.productID);
       this.massage = this.massage + " del calzado de " + this.category + " con codigo " + this.productID;
     });
+    this.apiRest.getMeGusta(Number(this.productID)).subscribe((data: {}) => {
+      this.cantidadLike = data[0].cantidad;
+    });
+    this.apiRest.getNoMeGusta(Number(this.productID)).subscribe((data: {}) => {
+      this.cantidadDisLike = data[0].cantidad;
+    });
   }
     like(valor){
+      const data = {
+        idUsuario: this.apiRest.returnIdUser(),
+        idProducto: this.productID
+      };
       if (this.ejecutad === false){
         this.cantidadLike += valor;
+        this.apiRest.addMegusta(data).subscribe((result) => {
+          console.log('Me gusta');
+        }, (err) => {
+          console.log(err);
+        });
+        if (this.first === true){
+          this.cantidadDisLike -= 1;
+        }
         this.ejecutad = true;
       }
     }
     dislike(valor){
-      if (this.ejecutad === true){
-        this.cantidadDisLike += 1;
-        this.cantidadLike = this.cantidadLike - 1;
-        this.ejecutad = false;
-      }
+      const data = {
+        idUsuario: this.apiRest.returnIdUser(),
+        idProducto: this.productID
+      };
+      this.apiRest.addNoMegusta(data).subscribe((result) => {
+        console.log('No Me gusta');
+      }, (err) => {
+        console.log(err);
+      });
+      this.cantidadDisLike += 1;
+      this.ejecutad = false;
+      this.first = true;
     }
     comentarioProducto(data){
       this.router.navigate(['./comentario'+'/'+this.productID]);

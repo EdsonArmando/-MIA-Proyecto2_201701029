@@ -1,1 +1,40 @@
-
+<h3>Formulario de Registro</h3>
+<div class="Form">
+  <div class="Form-SignUp">
+    <form [formGroup]="ModifyUser" (ngSubmit)="Create(ModifyUser.value)" >
+      <label>Nombre:</label>
+      <br>
+      <input type="text" formControlName="nombre" >
+      <br>
+      <label>Apellido:</label>
+      <br>
+      <input type="text" formControlName="apellido" >
+      <br>
+      <label>FechaNacimiento:</label>
+      <br>
+      <input type="text" formControlName="fechaNacimiento" >
+      <br>
+      <label>Pais:</label>
+      <br>
+      <select formControlName="pais" name="cars" id="cars">
+        <option *ngFor="let pais of paises ; index as id" [value]="pais.idPais">{{pais.nombre}}</option>
+      </select>
+      <br>
+      <label>URl_Image:</label>
+      <br>
+      <input type="file"
+             formControlName="foto"
+             #userPhoto
+             (change)="onFileSelected($event)"
+             name="image"
+             autocomplete="off"
+      />
+      <br>
+      <label>Password:</label>
+      <br>
+      <input type="password" formControlName="contrasenia">
+      <br>
+      <input type="submit" value="Modificar">
+    </form>
+  </div>
+</div>

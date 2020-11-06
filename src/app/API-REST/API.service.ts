@@ -74,6 +74,12 @@ export class ApiRest{
   public getPaises(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getPaises');
   }
+  public getMeGusta(id): Observable<any>{
+    return this.httpClient.put(endpointLocal + 'getMegusta', '{ "id": "' + id + '" }' , httpOptions);
+  }
+  public getNoMeGusta(id): Observable<any>{
+    return this.httpClient.put(endpointLocal + 'getNoMegusta', '{ "id": "' + id + '" }' , httpOptions);
+  }
   public getLastId(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getLastIdCompra');
   }
@@ -94,6 +100,9 @@ export class ApiRest{
   }
   public getOneProducto(id): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'oneProduct', '{ "id": "' + id + '" }' , httpOptions);
+  }
+  public updatedataUser(data): Observable<any>{
+    return this.httpClient.put<any>(endpointLocal + 'updateUser', JSON.stringify(data), httpOptions);
   }
   public loginUser(user, password): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'Login', '{ "username": "' + user
@@ -142,6 +151,18 @@ export class ApiRest{
   }
   public addDetalleCompra(data): Observable<any> {
     return this.httpClient.post<any>(endpointLocal + 'insertDetalleCompra', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.idCompra}`)),
+    );
+  }
+  public addMegusta(data): Observable<any> {
+    return this.httpClient.post<any>(endpointLocal + 'insertMegusta', JSON.stringify(data), httpOptions).pipe(
+      // tslint:disable-next-line:no-shadowed-variable
+      tap(( data ) => console.log(`added product w/ id=${data.idCompra}`)),
+    );
+  }
+  public addNoMegusta(data): Observable<any> {
+    return this.httpClient.post<any>(endpointLocal + 'insertNoMegusta', JSON.stringify(data), httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap(( data ) => console.log(`added product w/ id=${data.idCompra}`)),
     );

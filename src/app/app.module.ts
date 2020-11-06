@@ -67,6 +67,7 @@ import {AppComentarioComponent} from './Comentario/app-comentario.component';
       { path: 'listShoes/List', component: ShoesListComponent },
       { path: 'cart', component: ProductCartComponent },
       { path: 'venta', component: VentaComponent },
+      { path: 'modificarPerfil', component: PerfilComponent },
       { path: 'comentario/:productId', component: AppComentarioComponent },
       { path: 'Perfil/:id', component: SignupComponent },
       { path: 'create_shoe', component: CreateShoeComponent },

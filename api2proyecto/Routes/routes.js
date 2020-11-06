@@ -78,6 +78,40 @@ router.put('/getComentarios', async (req, res) => {
   var jsonString = JSON.stringify(Users);
   res.json(Users);
 })
+//GetMegusta
+router.put('/getMegusta', async (req, res) => {
+  const { id } = req.body;
+  sql = "select sum(megusta.cantidad) from megusta where megusta.idProducto = :id";
+
+  let result = await BD.Open(sql, [id], true);
+  var Users = [];
+
+  result.rows.map(data => {
+    let userSchema = {
+      "cantidad": data[0]
+    }
+    Users.push(userSchema);
+  })
+  var jsonString = JSON.stringify(Users);
+  res.json(Users);
+})
+//GetNoMegusta
+router.put('/getNoMegusta', async (req, res) => {
+  const { id } = req.body;
+  sql = "select sum(noMeGusta.cantidad) from noMeGusta where noMeGusta.idProducto = :id";
+
+  let result = await BD.Open(sql, [id], true);
+  var Users = [];
+
+  result.rows.map(data => {
+    let userSchema = {
+      "cantidad": data[0]
+    }
+    Users.push(userSchema);
+  })
+  var jsonString = JSON.stringify(Users);
+  res.json(Users);
+})
 //GetUsuario
 router.get('/getProducto', async (req, res) => {
   sql = "(select producto.idproducto,producto.nombre,producto.detalleproducto,producto.foto,producto.idcategoria,producto.precio, categoria.nombre as NombreCategoria, usuario.nombre from categoria, producto,usuario" +
@@ -221,6 +255,26 @@ router.post('/insertDetalleCompra',async (req,res)=>{
     "idCompra": idCompra
   })
 })
+//create Me Gusta
+router.post('/insertMegusta',async (req,res)=>{
+  const { idUsuario,idProducto,cantidad } = req.body;
+  sql = "insert into meGusta(idUsuario,idProducto,cantidad)" +
+    "values (:idUsuario,:idProducto,1 )";
+  await BD.Open(sql, [idUsuario,idProducto ], true);
+  res.status(200).json({
+    "idUsuario": idUsuario
+  })
+})
+//create NO Gusta
+router.post('/insertNoMegusta',async (req,res)=>{
+  const { idUsuario,idProducto,cantidad } = req.body;
+  sql = "insert into nomegusta(idUsuario,idProducto,cantidad)" +
+    "values (:idUsuario,:idProducto,1 )";
+  await BD.Open(sql, [idUsuario,idProducto ], true);
+  res.status(200).json({
+    "idUsuario": idUsuario
+  })
+})
 //Validar Cuenta
 //Login
 router.get('/Validate/:nombre',async (req,res)=>{
@@ -232,18 +286,36 @@ router.get('/Validate/:nombre',async (req,res)=>{
 //getId
 router.put('/getId',async (req,res)=>{
   const { username } = req.body;
-  sql = "Select usuario.idUsuario from usuario where usuario.nombre =: username";
+  sql = "Select *  from usuario where usuario.nombre =: username";
   let result = await BD.Open(sql, [username], true);
   var Users = [];
   result.rows.map(user => {
     let userSchema = {
       "idUsuario": user[0],
+      "nombre": user[2],
+      "apellido": user[3],
+      "contrasenia": user[5],
+      "fecha": user[6],
+      "idPais": user[7],
+      "correo": user[4],
+      "creditos": user[8]
     }
     Users.push(userSchema);
   })
   var jsonString = JSON.stringify(Users);
   res.json(Users);
 });
+//Update User
+router.put('/updateUser',async (req,res)=>{
+  const { idUsuario,nombre,apellido,contrasenia,fechaNacimiento,pais,foto,correo, creditos, estado } = req.body;
+  sql = "UPDATE Usuario SET idTipo = 1, nombre = :nombre, apellido = :apellido, contrasenia = :contrasenia, fechaNacimiento = :fecha, idPais = :pais, foto = :foto, correo = :correo, creditos = :creditos, estado = :estado where idUsuario = :idUsuario";
+  await BD.Open(sql, [nombre,apellido,contrasenia,fechaNacimiento,pais,foto,correo,creditos, estado,idUsuario], true);
+  res.status(200).json({
+    "Nombre": nombre,
+    "Apellido": apellido,
+    "correo": correo
+  })
+})
 //getId
 router.put('/getUser',async (req,res)=>{
   const { id } = req.body;

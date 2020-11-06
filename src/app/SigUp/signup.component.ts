@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {ApiRest} from '../API-REST/API.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +10,7 @@ import {ApiRest} from '../API-REST/API.service';
 })
 export class SignupComponent implements OnInit{
   user;
-  constructor(private apiRest: ApiRest) {
+  constructor(private apiRest: ApiRest, private  router: Router) {
   }
   ngOnInit(): void {
     this.getData();
@@ -19,5 +20,8 @@ export class SignupComponent implements OnInit{
       this.user = data2[0];
       console.log('data', data2);
     });
+  }
+  Modificar(){
+    this.router.navigate(['./modificarPerfil']);
   }
 }
