@@ -143,6 +143,52 @@ img:hover{
   cursor: auto;
 }
 /*
+Sub Menu
+ */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: #0090ff;
+}
+
+.subnav-content {
+  display: none;
+  padding-top: 50px;
+  position: absolute;
+  left: 0;
+  background-color: rgba(27, 45, 255, 0.5);
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+/*
 Like
  */
 .fa {

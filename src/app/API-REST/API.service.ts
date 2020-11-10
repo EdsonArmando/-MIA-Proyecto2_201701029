@@ -5,7 +5,7 @@ import {tap} from 'rxjs/operators';
 
 
 const endpoint = 'https://storeonline-eg-mysql.herokuapp.com/';
-const endpointLocal = 'http://192.168.0.35:3031/';
+const endpointLocal = 'http://192.168.1.150:3031/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -73,6 +73,14 @@ export class ApiRest{
   // Api Local
   public getPaises(): Observable<any>{
     return this.httpClient.get(endpointLocal + 'getPaises');
+  }
+  public getDenuncias(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'Denuncias');
+  }
+  public deleteProduct(id): Observable<any>{
+    return this.httpClient.delete<any>(endpointLocal + 'deleteProduct/' + id , httpOptions).pipe(
+      tap(_ => console.log('deleted product id=${id}'))
+    );
   }
   public getMeGusta(id): Observable<any>{
     return this.httpClient.put(endpointLocal + 'getMegusta', '{ "id": "' + id + '" }' , httpOptions);

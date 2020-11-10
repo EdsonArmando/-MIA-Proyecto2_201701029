@@ -1,0 +1,17 @@
+<h2>Listado de Denuncias</h2>
+<div style="margin-top: 15px">
+  <table>
+    <tr>
+      <th>Descripcion</th>
+      <th>Producto</th>
+      <th>Usuario</th>
+      <th>Aceptar Denuncia</th>
+    </tr>
+    <tr *ngFor="let com of Denuncias">
+      <td>{{com.Descripcion}}</td>
+      <td>{{com.Producto}}</td>
+      <td>{{com.Usuario}}</td>
+      <td><a (click)="hola(com.idProducto)">Aceptar</a></td>
+    </tr>
+  </table>
+</div>

@@ -42,6 +42,7 @@ export class ShoesListComponent implements OnInit{
     }else{
       this.apiRest.getProducts().subscribe((data: {}) => {
         this.shoes = data;
+        console.log(data);
       });
     }
   }

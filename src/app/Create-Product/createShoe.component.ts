@@ -26,7 +26,7 @@ export class CreateShoeComponent implements OnInit{
       precio: '',
       detalleProducto: '',
       idCategoria: '',
-      idUsuario: this.apiRest.returnIdUser()
+      idUsuario: this.apiRest.returnIdUser(),
     });
   }
   ngOnInit(): void {
