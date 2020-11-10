@@ -1,0 +1,13 @@
+{
+  "appId": "com.example.app",
+  "appName": "storeOnline",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/storeOnline",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

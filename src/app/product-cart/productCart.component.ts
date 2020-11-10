@@ -53,8 +53,22 @@ export class ProductCartComponent implements OnInit{
     }, (err) => {
       console.log(err);
     });
+    // Restar Creditos
+    const dataCreditos = {
+      creditos: this.total,
+      idUsuario: this.apiRest.returnIdUser(),
+    };
+    this.apiRest.updateCreditos(dataCreditos).subscribe((result) => {
+      console.log('Creditos restados correctmente');
+    }, (err) => {
+      console.log(err);
+    });
+  }
+  setCreditosUsuarios(){
+
   }
   detalleCompra(){
+    console.log(this.products);
     // tslint:disable-next-line:no-shadowed-variable
     this.apiRest.getLastId().subscribe((data: {}) => {
       this.idCompra = data[0].codigo;
@@ -66,6 +80,11 @@ export class ProductCartComponent implements OnInit{
           cantidad: this.products[i].cantidad,
           fecha: this.todayString
         };
+        this.apiRest.setCreditos(this.products[i].idUserProducto, this.products[i].price).subscribe((result) => {
+          console.log('Detalle Creado Exitosamente');
+        }, (err) => {
+          console.log(err);
+        });
         this.apiRest.addDetalleCompra(data).subscribe((result) => {
           console.log('Detalle Creado Exitosamente');
         }, (err) => {

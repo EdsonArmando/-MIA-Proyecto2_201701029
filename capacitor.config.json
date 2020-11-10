@@ -1,0 +1,14 @@
+{
+  "appId": "com.example.app",
+  "appName": "storeOnline",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/storeOnline",
+  "linuxAndroidStudioPath": "/snap/android-studio/96/android-studio/bin/studio.sh",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

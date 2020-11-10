@@ -29,7 +29,7 @@ export class CreateUserComponent implements OnInit{
       contrasenia: '',
       fechaNacimiento: '',
       pais: '',
-      creditos: 100,
+      creditos: 10000,
       foto: '',
       estado: '0'
     });

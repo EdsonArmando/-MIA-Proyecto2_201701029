@@ -178,6 +178,14 @@ router.put('/Login',async (req,res)=>{
     var jsonString = JSON.stringify(Users);
     res.json(Users);
 })
+//Update creditos
+router.put('/updateCreditos',async (req,res)=>{
+  const { creditos, idUsuario } = req.body;
+  sql = "update usuario set usuario.creditos = 10000 - :creditos where usuario.idUsuario = :idUsuario";
+  await BD.Open(sql, [creditos, idUsuario], true);
+  var jsonString = JSON.stringify(Users);
+  res.json('Creditos actualizados Correctamente');
+})
 //Create User
 router.post('/CreateUser',async (req,res)=>{
     const { idTipo,nombre,apellido,correo,contrasenia,fechaNacimiento,pais,creditos,foto,estado } = req.body;

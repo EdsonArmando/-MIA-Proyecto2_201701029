@@ -101,8 +101,14 @@ export class ApiRest{
   public getOneProducto(id): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'oneProduct', '{ "id": "' + id + '" }' , httpOptions);
   }
+  public setCreditos(id,creditos): Observable<any>{
+    return this.httpClient.put<any>(endpointLocal + 'setCreditos', '{ "id": ' + id + ',' + '"price": ' + creditos + ' }' , httpOptions);
+  }
   public updatedataUser(data): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'updateUser', JSON.stringify(data), httpOptions);
+  }
+  public updateCreditos(data): Observable<any>{
+    return this.httpClient.put<any>(endpointLocal + 'updateCreditos', JSON.stringify(data), httpOptions);
   }
   public loginUser(user, password): Observable<any>{
     return this.httpClient.put<any>(endpointLocal + 'Login', '{ "username": "' + user

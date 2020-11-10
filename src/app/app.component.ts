@@ -2,6 +2,7 @@ import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
