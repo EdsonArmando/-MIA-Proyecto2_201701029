@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit{
   userData;
   tipoUsuario;
   idUsuario;
+  today: number = Date.now();
+  todayString: string = new Date().toDateString();
   constructor(
     private apiRest: ApiRest,
     private formBuilder: FormBuilder,
@@ -34,6 +36,13 @@ export class LoginComponent implements OnInit{
       if (this.userData.length === 1){
         this.tipoUsuario = this.userData[0].NOMBRE;
         alert('Bienvenido al Sistema');
+        const data = {
+          idUsuario: this.apiRest.returnIdUser(),
+          nombre: this.tipoUsuario,
+          operacion: 'Login',
+          fecha: this.todayString
+        };
+        this.apiRest.setAccion(data);
         this.apiRest.username = this.userData[0].NOMBRE;
         this.router.navigate(['./listShoes/List']);
       }else{

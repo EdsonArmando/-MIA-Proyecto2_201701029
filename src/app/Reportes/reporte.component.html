@@ -1,0 +1,58 @@
+<h2>Reportes</h2>
+<h3>{{titulo}}</h3>
+<div style="margin-top: 15px">
+  <table>
+    <tr>
+      <th *ngIf="encabezado.idUsuario">{{encabezado.idUsuario}}</th>
+      <th *ngIf="encabezado.nombre">{{encabezado.nombre}}</th>
+      <th *ngIf="id === '2'">{{encabezado.idProducto}}</th>
+      <th *ngIf="id === '2'">{{encabezado.Nombre}}</th>
+      <th *ngIf="encabezado.descripcion">{{encabezado.descripcion}}</th>
+      <th *ngIf="encabezado.fecha">{{encabezado.fecha}}</th>
+      <th *ngIf="id === '2'">{{encabezado.cantidad}}</th>
+      <td *ngIf="id === '3' || id === '4'">{{encabezado.idProducto}}</td>
+      <td *ngIf="id === '3' || id === '4'">{{encabezado.cantidad}}</td>
+      <td *ngIf="id === '3' || id === '4'">{{encabezado.Nombre}}</td>
+      <td *ngIf="id === '5'">{{encabezado.Creditos}}</td>
+      <td *ngIf="id === '5'">{{encabezado.IdUsuario}}</td>
+      <td *ngIf="id === '5'">{{encabezado.Nombre}}</td>
+      <td *ngIf="id === '6'">{{encabezado.Total}}</td>
+      <td *ngIf="id === '6'">{{encabezado.IdUsuario}}</td>
+      <td *ngIf="id === '6'">{{encabezado.Nombre}}</td>
+      <td *ngIf="id === '7'">{{encabezado.Total}}</td>
+      <td *ngIf="id === '7'">{{encabezado.IdUsuario}}</td>
+      <td *ngIf="id === '7'">{{encabezado.Nombre}}</td>
+      <td *ngIf="id === '8'">{{encabezado.CantidadClientes}}</td>
+      <td *ngIf="id === '8'">{{encabezado.idPais}}</td>
+      <td *ngIf="id === '8'">{{encabezado.Creditos}}</td>
+      <td *ngIf="id === '8'">{{encabezado.NombrePais}}</td>
+      <td *ngIf="id === '8'">{{encabezado.CantidadProductos}}</td>
+    </tr>
+    <tr *ngFor="let com of data">
+      <td *ngIf="id === '1'">{{com.idUsuario}}</td>
+      <td *ngIf="id === '1'">{{com.nombre}}</td>
+      <td *ngIf="id === '1'">{{com.operacion}}</td>
+      <td *ngIf="id === '1'">{{com.fecha}}</td>
+      <td *ngIf="id === '2'">{{com.idProducto}}</td>
+      <td *ngIf="id === '2'">{{com.cantidad}}</td>
+      <td *ngIf="id === '2'">{{com.Nombre}}</td>
+      <td *ngIf="id === '3' || id === '4'">{{com.idProducto}}</td>
+      <td *ngIf="id === '3' || id === '4'">{{com.cantidad}}</td>
+      <td *ngIf="id === '3' || id === '4'">{{com.Nombre}}</td>
+      <td *ngIf="id === '5'">{{com.Creditos}}</td>
+      <td *ngIf="id === '5'">{{com.idUsuario}}</td>
+      <td *ngIf="id === '5'">{{com.Nombre}}</td>
+      <td *ngIf="id === '6'">{{com.Total}}</td>
+      <td *ngIf="id === '6'">{{com.IdUsuario}}</td>
+      <td *ngIf="id === '6'">{{com.Nombre}}</td>
+      <td *ngIf="id === '7'">{{com.Total}}</td>
+      <td *ngIf="id === '7'">{{com.IdUsuario}}</td>
+      <td *ngIf="id === '7'">{{com.Nombre}}</td>
+      <td *ngIf="id === '8'">{{com.CantidadClientes}}</td>
+      <td *ngIf="id === '8'">{{com.idPais}}</td>
+      <td *ngIf="id === '8'">{{com.Creditos}}</td>
+      <td *ngIf="id === '8'">{{com.NombrePais}}</td>
+      <td *ngIf="id === '8'">{{com.CantidadProductos}}</td>
+    </tr>
+  </table>
+</div>

@@ -15,6 +15,7 @@ export class AppComentarioComponent implements OnInit{
   formCat;
   comentarios;
   productID;
+  todayString: string = new Date().toDateString();
   constructor(private formBuilder: FormBuilder,
               private storage: AngularFireStorage,
               private apiRest: ApiRest,
@@ -35,6 +36,13 @@ export class AppComentarioComponent implements OnInit{
     });
   }
   Denunciar(){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Denuncia de Producto',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     const data = {
       idUsuario: this.apiRest.returnIdUser(),
       idProducto: this.productID,
@@ -49,6 +57,13 @@ export class AppComentarioComponent implements OnInit{
     });
   }
   InsertComentario(dataComentario){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Comentario de Producto',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     dataComentario.idProducto = this.productID;
     this.apiRest.addComentario(dataComentario).subscribe((result) => {
       alert('Comentario agregada Exitosamente');

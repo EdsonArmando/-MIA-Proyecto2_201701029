@@ -15,6 +15,7 @@ export class PerfilComponent implements OnInit{
   ModifyUser;
   url2;
   paises;
+  todayString: string = new Date().toDateString();
   downloadURL: Observable<string>;
   @Input() dataUser;
   constructor(
@@ -42,6 +43,13 @@ export class PerfilComponent implements OnInit{
     });
   }
   Create(data){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.dataUser.nombre,
+      operacion: 'Modificar Perfil',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     data.foto = this.url2;
     this.apiRest.updatedataUser(data).subscribe((result) => {
       alert('Usuario Editado Exitosamente');

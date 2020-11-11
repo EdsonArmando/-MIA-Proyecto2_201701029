@@ -5,7 +5,7 @@ import {tap} from 'rxjs/operators';
 
 
 const endpoint = 'https://storeonline-eg-mysql.herokuapp.com/';
-const endpointLocal = 'http://192.168.1.150:3031/';
+const endpointLocal = 'http://192.168.0.35:3031/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -18,6 +18,7 @@ const httpOptions = {
 })
 
 export class ApiRest{
+   Bitacora: any[] = [];
    login = false;
    idUser = 0;
    username;
@@ -26,6 +27,14 @@ export class ApiRest{
   public getOneShoe(id): Observable<any>{
     console.log(id);
     return this.httpClient.put<any>(endpoint + 'getShoe/' + id, '{ "id": "' + id + '" }' , httpOptions);
+  }
+  public setAccion(data){
+    console.log(data);
+    // @ts-ignore
+    this.Bitacora.push(data);
+  }
+  public getBitacora(){
+    return this.Bitacora;
   }
   public returnIndex(){
     return 0;
@@ -180,5 +189,29 @@ export class ApiRest{
       // tslint:disable-next-line:no-shadowed-variable
       tap(( data ) => console.log(`added product w/ id=${data.idCompra}`)),
     );
+  }
+  /*
+  Consultas
+   */
+  public getCOnsulta1(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta1');
+  }
+  public getCOnsulta2(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta2');
+  }
+  public getCOnsulta3(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta3');
+  }
+  public getCOnsulta4(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta4');
+  }
+  public getCOnsulta5(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta5');
+  }
+  public getCOnsulta6(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta6');
+  }
+  public getCOnsulta7(): Observable<any>{
+    return this.httpClient.get(endpointLocal + 'consulta7');
   }
 }

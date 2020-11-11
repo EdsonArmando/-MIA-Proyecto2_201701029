@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit{
   user;
+  todayString: string = new Date().toDateString();
   constructor(private apiRest: ApiRest, private  router: Router) {
   }
   ngOnInit(): void {

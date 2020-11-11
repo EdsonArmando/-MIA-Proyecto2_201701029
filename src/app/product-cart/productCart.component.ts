@@ -39,6 +39,13 @@ export class ProductCartComponent implements OnInit{
     this.ngOnInit();
   }
   comprar(){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Compra de Producto',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     //Insert compra(idUsuario,fecha)
     //Insert insert into detallecompra(idCompra,idProducto,cantidad,fecha)
     const data = {

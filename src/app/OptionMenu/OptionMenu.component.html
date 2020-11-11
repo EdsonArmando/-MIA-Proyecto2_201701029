@@ -10,14 +10,14 @@
   <div class="subnav">
     <a class="subnavbtn" onclick="myFunction2()" *ngIf="login" [routerLink]="['Denuncias']">Reportes</a>
     <div class="subnav-content">
-      <a href="#company">Bitacora</a>
-      <a href="#team">Reporte 1</a>
-      <a href="#careers">Reporte 2</a>
-      <a href="#careers">Reporte 3</a>
-      <a href="#careers">Reporte 4</a>
-      <a href="#careers">Reporte 5</a>
-      <a href="#careers">Reporte 6</a>
-      <a href="#careers">Reporte 7</a>
+      <a [routerLink]="['reporte/1']">Bitacora</a>
+      <a [routerLink]="['reporte/2']">Reporte 1</a>
+      <a [routerLink]="['reporte/3']">Reporte 2</a>
+      <a [routerLink]="['reporte/4']">Reporte 3</a>
+      <a [routerLink]="['reporte/5']">Reporte 4</a>
+      <a [routerLink]="['reporte/6']">Reporte 5</a>
+      <a [routerLink]="['reporte/7']">Reporte 6</a>
+      <a [routerLink]="['reporte/8']">Reporte 7</a>
     </div>
   </div>
     <a id="singup" [routerLink]="['Perfil',idUser]" (click)="hola()">Perfil</a>

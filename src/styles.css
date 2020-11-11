@@ -226,6 +226,10 @@ app-create-comentario{
   margin: 0px auto;
   max-width: 100%;
 }
+app-reporte-up{
+  margin: 0px auto;
+  max-width: 100%;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

@@ -8,6 +8,7 @@ import {ApiRest} from '../API-REST/API.service';
 
 export class CartService{
   items = [];
+  todayString: string = new Date().toDateString();
   constructor(
     private http: HttpClient,
     private apiRest: ApiRest,
@@ -17,6 +18,13 @@ export class CartService{
     }
   }
   addToCart(product, idUsuario){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Agregar el Producto',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     product.idUserCarrito = idUsuario;
     this.items = JSON.parse(localStorage.getItem('pila'));
     this.items.push(product);

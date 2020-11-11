@@ -13,6 +13,7 @@ import {AngularFireStorage} from '@angular/fire/storage';
 export class CreateUserComponent implements OnInit{
   LoginUser;
   downloadURL: Observable<string>;
+  todayString: string = new Date().toDateString();
   userData;
   url2;
   paises;
@@ -41,6 +42,13 @@ export class CreateUserComponent implements OnInit{
   }
   Create(data){
     data.foto = this.url2;
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: data.nombre,
+      operacion: 'Crear Perfil',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     this.apiRest.addCustomer(data).subscribe((result) => {
       alert('Usuario Creado Exitosamente');
     }, (err) => {

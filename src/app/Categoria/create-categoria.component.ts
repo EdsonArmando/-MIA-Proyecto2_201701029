@@ -13,6 +13,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CreateCategoriaComponent implements OnInit{
   formCat;
+  todayString: string = new Date().toDateString();
   constructor(private formBuilder: FormBuilder,
               private storage: AngularFireStorage,
               private apiRest: ApiRest,
@@ -24,6 +25,13 @@ export class CreateCategoriaComponent implements OnInit{
   ngOnInit(): void {
   }
   InsertCategoria(dataCategoria){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Insertar la Categoria',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
     this.apiRest.addCategoria(dataCategoria).subscribe((result) => {
       alert('Categoria agregada Exitosamente');
     }, (err) => {

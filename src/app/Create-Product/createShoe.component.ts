@@ -14,6 +14,7 @@ import {ActivatedRoute} from '@angular/router';
 export class CreateShoeComponent implements OnInit{
   insertShoe;
   downloadURL: Observable<string>;
+  todayString: string = new Date().toDateString();
   url2;
   categorias;
   constructor(private formBuilder: FormBuilder,
@@ -35,6 +36,13 @@ export class CreateShoeComponent implements OnInit{
     });
   }
   InsertShoe(dataShoe){
+    const data2 = {
+      idUsuario: this.apiRest.returnIdUser(),
+      nombre: this.apiRest.returnIdUser(),
+      operacion: 'Insertar el Producto',
+      fecha: this.todayString
+    };
+    this.apiRest.setAccion(data2);
       dataShoe.idCategoria = Number(dataShoe.idCategoria);
       dataShoe.foto = this.url2;
       this.apiRest.addProducto(dataShoe).subscribe((result) => {
